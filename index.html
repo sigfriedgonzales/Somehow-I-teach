@@ -2,10 +2,248 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Sigi Gonzales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fiktive Autorenbiografie zu Sigi Gonzales im Rahmen des Projekts Somehow I Teach.">
+  <title>Sigi Gonzales – Projektarchiv</title>
+  <style>
+    :root {
+      --border: #a2a9b1;
+      --link: #36c;
+      --visited: #795cb2;
+      --page: #ffffff;
+      --bg: #f8f9fa;
+      --text: #202122;
+      --muted: #54595d;
+      --notice: #eaecf0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.62;
+      font-size: 16px;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mark {
+      width: 34px;
+      height: 34px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      font-size: 19px;
+    }
+    .brand { line-height: 1.15; }
+    .brand strong { display: block; font-family: Georgia, serif; font-size: 20px; }
+    .brand span { color: var(--muted); font-size: 13px; }
+    .layout {
+      max-width: 1480px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: calc(100vh - 63px);
+    }
+    aside {
+      padding: 26px 18px;
+      font-size: 14px;
+      border-right: 1px solid var(--border);
+    }
+    aside h2 {
+      margin: 0 0 8px;
+      color: #000;
+      font-size: 15px;
+      font-weight: normal;
+    }
+    aside ul { margin: 0 0 25px; padding: 0; list-style: none; }
+    aside li { margin: 5px 0; }
+    main {
+      background: var(--page);
+      padding: 28px 42px 60px;
+      min-width: 0;
+    }
+    .project-notice {
+      border: 1px solid var(--border);
+      background: var(--notice);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .project-notice strong { display: block; margin-bottom: 2px; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 7px;
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: normal;
+      line-height: 1.25;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      margin: 32px 0 12px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      margin: 25px 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .lead { margin-top: 17px; }
+    .infobox {
+      width: 310px;
+      float: right;
+      margin: 0 0 18px 28px;
+      border: 1px solid var(--border);
+      background: #f8f9fa;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .infobox caption {
+      background: #cfe3ff;
+      font-weight: bold;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .infobox th, .infobox td {
+      padding: 7px 9px;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid #eaecf0;
+    }
+    .infobox th { width: 39%; font-weight: bold; }
+    .toc {
+      display: table;
+      border: 1px solid var(--border);
+      background: #f8f9fa;
+      padding: 9px 20px 10px 15px;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .toc-title { font-weight: bold; text-align: center; margin-bottom: 4px; }
+    .toc ol { margin: 0; padding-left: 25px; }
+    .toc li { margin: 2px 0; }
+    blockquote {
+      margin: 18px 38px;
+      padding: 8px 16px;
+      border-left: 4px solid #a2a9b1;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      color: #3a3a3a;
+      background: #f8f9fa;
+    }
+    .quote-source {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .works { padding-left: 24px; }
+    .works li { margin: 7px 0; }
+    .clear { clear: both; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 760px) {
+      .layout { display: block; }
+      aside { display: none; }
+      main { padding: 20px 18px 42px; }
+      .infobox { float: none; width: 100%; margin: 18px 0; }
+      h1 { font-size: 28px; }
+      blockquote { margin: 16px 8px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Sigi Gonzales</h1>
-  <p>Die Seite funktioniert.</p>
-</body>
-</html>
+  <header class="topbar">
+    <div class="mark">S</div>
+    <div class="brand">
+      <strong>Somehow I Teach – Projektarchiv</strong>
+      <span>Eine freie Projektenzyklopädie</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside aria-label="Seitennavigation">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="#artikel">Hauptseite</a></li>
+        <li><a href="#werk">Werk</a></li>
+        <li><a href="#rezeption">Rezeption</a></li>
+        <li><a href="#veroeffentlichungen">Veröffentlichungen</a></li>
+      </ul>
+      <h2>Projekt</h2>
+      <ul>
+        <li><a href="#einordnung">Über diese Seite</a></li>
+        <li><a href="#hinweis">Fiktionshinweis</a></li>
+      </ul>
+    </aside>
+
+    <main id="artikel">
+      <div class="project-notice" id="hinweis">
+        <strong>Fiktive Darstellung</strong>
+        Diese Website ist Teil eines schulischen Literatur- und Theaterprojekts. Sigi Gonzales, die genannten Veröffentlichungen, Zitate und Rezensionen sind erfunden. Die Seite steht in keiner Verbindung zu Wikipedia oder der Wikimedia Foundation.
+      </div>
+
+      <h1>Sigi Gonzales</h1>
+
+      <table class="infobox">
+        <caption>Sigi Gonzales</caption>
+        <tr><th>Geboren</th><td>12. September 1984<br>München</td></tr>
+        <tr><th>Bürgerlicher Name</th><td>Siegfried González</td></tr>
+        <tr><th>Tätigkeit</th><td>Berufsschullehrer, Autor, satirischer Beobachter</td></tr>
+        <tr><th>Bekanntes Werk</th><td><em>Somehow I Teach – Trotzdem unterrichten im System</em></td></tr>
+        <tr><th>Projektstatus</th><td>Fiktive Autorenfigur</td></tr>
+      </table>
+
+      <p class="lead"><strong>Sigi Gonzales</strong> (* 12. September 1984 in München; eigentlich <strong>Siegfried González</strong>) ist ein fiktiver deutscher Berufsschullehrer, Autor und satirischer Beobachter des Bildungsalltags. Bekannt wurde er vor allem durch sein Buch <em>Somehow I Teach – Trotzdem unterrichten im System</em>, eine humorvoll-kritische Auseinandersetzung mit Schule, dualer Ausbildung, Digitalisierung, Bürokratie und der täglichen Improvisation im Lehrberuf.</p>
+
+      <p>Gonzales lebt nach eigener Darstellung in Bayern und arbeitet im Umfeld des bayerischen Berufsschulwesens. Seine Texte verbinden autobiografisch gefärbte Alltagsszenen mit satirischen Kommentaren über Unterricht, Verwaltung und Berufsausbildung. Kennzeichnend ist die Spannung zwischen pädagogischem Anspruch und organisatorischer Realität: zwischen guter Unterrichtsidee und Formular, Smartboard und fehlendem WLAN, langfristiger Planung und einer Vertretungsstunde, die „nur kurz“ übernommen werden soll.</p>
+
+      <nav class="toc" aria-label="Inhaltsverzeichnis">
+        <div class="toc-title">Inhaltsverzeichnis</div>
+        <ol>
+          <li><a href="#leben">Leben</a></li>
+          <li><a href="#werk">Werk</a>
+            <ol><li><a href="#somehow">Somehow I Teach – Trotzdem unterrichten im System</a></li></ol>
+          </li>
+          <li><a href="#stil">Stil und Themen</a></li>
+          <li><a href="#rezeption">Rezeption</a></li>
+          <li><a href="#zitat">Zitat</a></li>
+          <li><a href="#veroeffentlichungen">Veröffentlichungen</a></li>
+          <li><a href="#einordnung">Einordnung</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="leben">Leben</h2>
+      <p>Siegfried „Sigi“ González wuchs in München auf. Seine Mutter führte zeitweise ein kleines Schreibwaren- und Kopiergeschäft; sein Vater arbeitete in wechselnden technischen Berufen. Gonzales interessierte sich früh gleichermaßen für alte Taschenbücher, Musik und ausrangierte Elektrogeräte. Nach dem Abitur studierte er zunächst Kommunikationswissenschaften, arbeitete aber parallel unter anderem in einem Copyshop, in der Gastronomie und als Nachhilfelehrer.</p>
+
+      <p>Nach mehreren beruflichen Stationen wechselte Gonzales in den Bildungsbereich. Zunächst arbeitete er als pädagogischer Mitarbeiter, später als Lehrer an einer bayerischen Berufsschule. Die Erfahrungen aus Klassenräumen, Lehrerzimmern, Werkstätten, Kopierräumen, frühen Bahnfahrten und langen Konferenzen prägen seine literarische Arbeit.</p>
+
+      <p>Über sein Privatleben ist wenig bekannt. Gonzales hält persönliche Details bewusst zurück und beschreibt sich öffentlich vor allem über seine Tätigkeit als Lehrer und Autor. Den Namen „Sigi Gonzales“ verwendet er als Künstlernamen. In einem fiktiven Kurzinterview erklärte er dazu: „Mein echter Name wäre zu lang für ein Buchcover und zu kurz für ein ernsthaftes Missverständnis.“</p>
+
+      <h2 id="werk">Werk</h2>
+      <h3 id="somehow"><em>Somehow I Teach – Trotzdem unterrichten im System</em></h3>
+      <p>Gonzales’ Debütbuch <em>Somehow I Teach – Trotzdem unterrichten im System</em> erschien in einer fiktiven Erstausgabe 2026. Es beschreibt den Alltag einer bayerischen Berufsschule aus der Sicht einer jungen Lehrkraft, die mit klaren Vorstellungen beginnt: guter Unterricht, faire Bewertungen, verständliche Erklärungen und eine ordentliche Wochenplanung.</p>
+
+      <p>Diese Vorsätze geraten früh mit der Wirklichkeit in Konflikt. Defekte Technik, vergessene Zugangsdaten, spontan geänderte Stundenpläne, schwierige Gespräche, Prüfungsdruck, kurzfristige Vertretungen und bürokratische Vorgaben verändern die Planung täglich. Der Titel verweist auf die Haltung der Hauptfigur: Nicht alles gelingt perfekt, aber Unterricht findet trotzdem statt – irgendwie, jeden Tag neu.</
